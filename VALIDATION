@@ -1,0 +1,37 @@
+if (s.id > 999999)
+            {
+                errorMessage = errorMessage + "Student id should be only Six digits\n";
+            }
+
+            if (s.id < 10000)
+            {
+                errorMessage = errorMessage + "Student id should be only Six digits\n";
+            }
+
+            if (s.name.Any(c => char.IsDigit(c)))
+            {
+                errorMessage = errorMessage + "Student should consists of only alphabets\n";
+            }
+            if (IsProductIdExist(ref students, id))
+            {
+                errorMessage = errorMessage + "Student Id Already Exists\n";
+            }
+            if (s.grade != 65 && s.grade != 66 && s.grade != 67 && s.grade != 70)
+            {
+                errorMessage = errorMessage + "Grade should be only A,B,C,D or F \n";
+            }
+
+
+            if (errorMessage != "")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(errorMessage);
+
+                Console.ResetColor();
+            }
+            else
+            {
+                students.Add(s);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Product Added Successfully");
+                Console.ResetColor();
