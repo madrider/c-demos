@@ -1,0 +1,18 @@
+async: This modifier indicates the method is now asynchronous. 
+The benefit of using this keyword is that it provides a simpler way to perform potentially long-running operations without blocking the callers thread. 
+The caller of this async method can resume its work without waiting for this asynchronous method to finish its job. 
+This reduces developer’s efforts for writing an additional code. The method with async modifier has at least one await. 
+This method now runs synchronously until the first await expression written in it.
+
+await: Typically, when a developer writes some code to perform an asynchronous operations using threads, 
+then he/she has to explicitly write necessary code to perform wait operations to complete a task. 
+In asynchronous methods, every operation which is getting performed is called a Task. 
+Here the task is also known as an ongoing work or work to perform.
+
+The ‘await’ keyword is applied on the task in an asynchronous method and suspends the execution of the method, until the awaited task is not completed. 
+During this time, the control is returned back to the caller of this asynchronous method.
+
+You must keep in mind that the keyword ‘async’ is applied on the method which is decorated with the ‘async’ keyword. 
+The most important behavior of the await keyword is it does not block the thread on which it is executing. 
+What it does it that it signals to the compiler to continue with other async methods, till the task is in an await state. 
+Once the task is completed, it resumes back where it left off from.
